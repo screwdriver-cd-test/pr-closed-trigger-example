@@ -9,7 +9,7 @@ jobs:
         requires: [~pr-closed]
         steps:
             - echo: |
-                echo 'this job is executed when a pr is closed/merged.'
+                echo 'this job is executed when a pr is closed or merged.'
     jobB:
         requires: [~pr, ~pr-closed]
         steps:
