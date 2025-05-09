@@ -1,4 +1,5 @@
-# pr-closed Trigger Example #stable
+# pr-closed Trigger Example 
+# Branch - stable
 To execute a job by a pr closed event in Screwdriver.cd, you can specify ~pr-closed requires property on the jobs.
 
 Example:
