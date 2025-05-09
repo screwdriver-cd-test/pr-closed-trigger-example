@@ -10,13 +10,16 @@ jobs:
         steps:
             - echo: |
                 echo 'this job is executed when a pr is closed or merged.'
+            - meta: meta get sd.pr
     jobB:
         requires: [~pr, ~pr-closed]
         steps:
             - echo: |
                 echo 'this job is executed when a pr is created or it is closed/merged.'
+            - meta: meta get sd.pr 
     jobC:
-        requires: [~pr-closed:stable]    
+        requires: [~pr-closed:stable, ~pr:stable]    
         steps:
             - echo: |
                 echo 'this job is executed when a pr is closed/merged on branch stable.'
+            - meta: meta get sd.pr
