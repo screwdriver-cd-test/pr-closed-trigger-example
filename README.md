@@ -1,2 +1,2 @@
-# pr-closed-trigger-example
-Example repo to test github pr closed trigger
+# pr-closed Trigger Example
+To execute a job by a pr closed event in Screwdriver.cd, you can specify ~pr-closed requires property on the jobs.
