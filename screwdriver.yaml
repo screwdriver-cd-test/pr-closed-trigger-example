@@ -1,0 +1,22 @@
+shared:
+  image: node:lts
+jobs:
+    main:
+        steps:
+            - echo: echo 'this is test job.'
+        requires: [~commit, ~pr]
+    jobA:
+        requires: [~pr-closed]
+        steps:
+            - echo: |
+                echo 'this job is executed when a pr is closed/merged.'
+    jobB:
+        requires: [~pr, ~pr-closed]
+        steps:
+            - echo: |
+                echo 'this job is executed when a pr is created or it is closed/merged.'
+    jobC:
+        requires: [~pr-closed:stable]    
+        steps:
+            - echo: |
+                echo 'this job is executed when a pr is closed/merged on branch stable.'
