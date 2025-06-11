@@ -8,6 +8,7 @@ jobs:
     jobA:
         requires: [~pr-closed]
         steps:
+            - fork-step: echo "this is fork step"
             - echo: |
                 echo 'this job is executed when a pr is closed/merged.'
             - meta: meta get sd.pr
